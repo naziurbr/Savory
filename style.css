@@ -1,0 +1,378 @@
+/* ========== Root Variables ========== */
+:root {
+    --primary-color: #ff6b35;
+    --secondary-color: #f7931e;
+    --dark-color: #2c3e50;
+    --light-color: #f8f9fa;
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Poppins', sans-serif;
+}
+
+/* ========== General Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+/* ========== Navigation ========== */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color) !important;
+    font-family: var(--font-primary);
+}
+
+.navbar-brand i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    color: var(--dark-color) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-reservation {
+    background: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-reservation:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* HERO */
+.hero-section {
+  position: relative;
+  /* Use dynamic viewport height for mobile toolbars with fallbacks */
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+
+  /* Remove these from your old CSS: display:flex; align-items:center; margin:auto; */
+}
+
+/* Let Bootstrap's row handle vertical centering */
+.hero-section .container,
+.hero-section .row {
+  min-height: inherit; /* ensures the row can center vertically */
+}
+
+/* Dark overlay for text contrast */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.40) 40%,
+    rgba(0,0,0,.45) 100%
+  );
+  z-index: 1;
+}
+
+/* Ensure content sits above overlay */
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Wave at the bottom */
+.hero-wave {
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* avoid visible seam */
+  width: 100%;
+  line-height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-wave svg { display: block; width: 100%; height: auto; }
+/* Match wave to your page background (Bootstrap var or fallback) */
+.hero-wave path { fill: var(--bs-body-bg, #ffffff); }
+
+/* Typography (responsive clamp) */
+.hero-subtitle {
+  font-size: clamp(.9rem, 1.4vw, 1.1rem);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .95;
+  margin-bottom: .25rem;
+}
+.hero-title {
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: .5rem;
+}
+.hero-description {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  opacity: .95;
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+}
+
+/* Buttons: wrap nicely on small screens */
+.hero-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+}
+
+/* Smooth anchor offset if you have a sticky navbar */
+#home { scroll-margin-top: 80px; }
+
+/* Optional: nudge background position on very small screens */
+@media (max-width: 576px) {
+  .hero-section { background-position: center top; }
+}
+
+/* ========== Feature Boxes ========== */
+.feature-box {
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-box i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.feature-box h5 {
+    margin-bottom: 0.5rem;
+}
+
+/* ========== Menu Section ========== */
+.menu-section {
+    background: var(--light-color);
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.nav-pills .nav-link {
+    color: var(--dark-color);
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background: var(--primary-color);
+}
+
+.menu-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.menu-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.menu-item-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+.menu-item-content {
+    flex: 1;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.menu-price {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ========== Special Offer ========== */
+.special-offer {
+    background: linear-gradient(135deg, #fff5f5, #fff9f5);
+}
+
+/* ========== Gallery ========== */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    transition: all 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,107,53,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallery-overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* ========== Reservation Section ========== */
+.reservation-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 5rem 0;
+}
+
+.reservation-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reservation-section .form-control {
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: none;
+}
+
+/* ========== Footer ========== */
+.footer {
+    background: var(--dark-color);
+    color: white;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menu-item-img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
