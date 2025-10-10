@@ -86,195 +86,399 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
 }
 
-/* HERO */
+/* Move navbar-toggler to the right side on mobile */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        position: absolute;
+        right: 10px; /* Adjust this as needed */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0; /* Adjust spacing between items in mobile view */
+    }
+
+    .navbar-nav.mx-auto {
+        justify-content: center; /* Center nav items */
+    }
+}
+
+
+/* HERO Section */
 .hero-section {
   position: relative;
-  /* Use dynamic viewport height for mobile toolbars with fallbacks */
-  min-height: 100vh;
-  min-height: 100svh;
-  min-height: 100dvh;
-
-  background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-  color: #fff;
+  min-height: 100vh; /* Ensures full viewport height */
   overflow: hidden;
-
-  /* Remove these from your old CSS: display:flex; align-items:center; margin:auto; */
 }
 
-/* Let Bootstrap's row handle vertical centering */
-.hero-section .container,
-.hero-section .row {
-  min-height: inherit; /* ensures the row can center vertically */
+/* Carousel Images */
+.carousel-item img {
+  object-fit: cover; /* Ensures the images cover the full area without distortion */
+  height: 100vh; /* Makes images take up full height */
 }
 
-/* Dark overlay for text contrast */
-.hero-overlay {
+/* Carousel Caption Styles */
+.carousel-caption {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.55) 0%,
-    rgba(0,0,0,.40) 40%,
-    rgba(0,0,0,.45) 100%
-  );
-  z-index: 1;
-}
-
-/* Ensure content sits above overlay */
-.hero-section .container {
-  position: relative;
+  top: 50%; /* Center content vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Optional: adds readability */
 }
 
-/* Wave at the bottom */
-.hero-wave {
-  position: absolute;
-  left: 0;
-  bottom: -1px; /* avoid visible seam */
-  width: 100%;
-  line-height: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-.hero-wave svg { display: block; width: 100%; height: auto; }
-/* Match wave to your page background (Bootstrap var or fallback) */
-.hero-wave path { fill: var(--bs-body-bg, #ffffff); }
-
-/* Typography (responsive clamp) */
+/* Subtitle and Title in Hero Section */
 .hero-subtitle {
-  font-size: clamp(.9rem, 1.4vw, 1.1rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   letter-spacing: .08em;
   text-transform: uppercase;
-  opacity: .95;
   margin-bottom: .25rem;
 }
+
 .hero-title {
   font-weight: 800;
-  line-height: 1.1;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  margin-bottom: .5rem;
-}
-.hero-description {
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  opacity: .95;
-  max-width: 60ch;
-  margin-inline: auto;
-  margin-bottom: 1.25rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
 }
 
-/* Buttons: wrap nicely on small screens */
+.hero-description {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  max-width: 80%;
+  margin: 0 auto 1.5rem;
+}
+
 .hero-buttons {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: .75rem;
+  gap: 1rem;
   justify-content: center;
 }
 
-/* Smooth anchor offset if you have a sticky navbar */
-#home { scroll-margin-top: 80px; }
-
-/* Optional: nudge background position on very small screens */
-@media (max-width: 576px) {
-  .hero-section { background-position: center top; }
+/* Button Styles */
+.hero-buttons .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px; /* Adds rounded corners to the buttons */
 }
 
-/* ========== Feature Boxes ========== */
+.hero-buttons .btn-primary {
+  background: var(--secondary-color); /* Primary button color */
+  border-color: var(--secondary-color);;
+}
+
+.hero-buttons .btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Carousel Control Styles (Next/Prev Buttons) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: make control buttons semi-transparent */
+  border-radius: 50%;
+}
+
+/* Adjust carousel on small screens */
+@media (max-width: 576px) {
+  .carousel-item img {
+    object-position: center top; /* Adjust image position on smaller screens */
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .hero-buttons a {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+
+  /* Feature Section */
 .feature-box {
     padding: 2rem;
-    transition: all 0.3s ease;
+    background-color: #fff; /* White background for each box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    opacity: 0;
+    transform: translateY(50px); /* Initially set to slightly downwards */
 }
 
-.feature-box i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
+/* Feature Box Hover Effect */
 .feature-box:hover {
-    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
 }
 
-.feature-box h5 {
-    margin-bottom: 0.5rem;
-}
-
-/* ========== Menu Section ========== */
-.menu-section {
-    background: var(--light-color);
-}
-
-.section-subtitle {
-    color: var(--primary-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-}
-
-.section-title {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-}
-
-.nav-pills .nav-link {
-    color: var(--dark-color);
-    border-radius: 50px;
-    padding: 0.75rem 2rem;
-    margin: 0 0.5rem;
-    font-weight: 500;
+/* Feature Box Icon Styling */
+.feature-box i {
+    font-size: 3rem; /* Larger icons for impact */
+    color: #007bff; /* Primary color for icons */
+    margin-bottom: 1rem;
     transition: all 0.3s ease;
 }
 
-.nav-pills .nav-link.active {
-    background: var(--primary-color);
+/* Feature Box Icon Hover Effect */
+.feature-box:hover i {
+    color: #ff6347; /* Change icon color on hover */
+    transform: scale(1.2); /* Slightly enlarge the icon */
 }
 
+/* Fade-In Effect on Scroll */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fade-in animation to the feature boxes */
+.feature-box {
+    animation: fadeIn 0.6s ease-out forwards; /* Animation for fade-in */
+}
+
+/* Delay the animation based on the index of the feature box */
+.feature-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.feature-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.feature-box:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.feature-box:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Ensure boxes are centered and aligned */
+.feature-box h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #6c757d; /* Gray text color */
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .feature-box {
+        padding: 1.5rem;
+    }
+
+    .feature-box i {
+        font-size: 2.5rem;
+    }
+
+    .feature-box h5 {
+        font-size: 1rem;
+    }
+
+    .feature-box p {
+        font-size: 0.9rem;
+    }
+}
+
+
+        
+
+
+/* --- Enhanced Menu Section Effects --- */
+
+/* Smooth fade for tab content */
+.tab-pane {
+    animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu item hover glow */
 .menu-item {
-    background: white;
+    background: #fff;
     border-radius: 15px;
     padding: 1.5rem;
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
-
 .menu-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
+/* Image subtle zoom on hover */
 .menu-item-img {
     width: 100px;
     height: 100px;
     border-radius: 10px;
     object-fit: cover;
     margin-right: 1.5rem;
+    transition: transform 0.4s ease;
+}
+.menu-item:hover .menu-item-img {
+    transform: scale(1.1);
 }
 
-.menu-item-content {
-    flex: 1;
+/* Modern pill nav look */
+.nav-pills .nav-link {
+    color: var(--dark-color);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.nav-pills .nav-link.active {
+    background: var(--primary-color);
+    color: #fff !important;
+    border-color: var(--primary-color);
 }
 
-.menu-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.menu-price {
-    color: var(--primary-color);
-    font-size: 1.5rem;
+/* Section title refinement */
+.section-title {
+    font-size: 2.75rem;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* ========== Special Offer ========== */
-.special-offer {
-    background: linear-gradient(135deg, #fff5f5, #fff9f5);
+
+
+/* ========== Feature Section ========== */
+.features-section {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Section Heading */
+.section-subtitle {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+/* Feature Box */
+.feature-box {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-box i {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feature-box h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.feature-box:hover i {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.feature-box:hover h5,
+.feature-box:hover p {
+  color: #fff;
+}
+
+/* Subtle Background Accent (optional) */
+.features-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feature-box {
+    padding: 1.5rem;
+  }
+
+  .feature-box i {
+    font-size: 2.2rem;
+  }
+
+  .feature-box h5 {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
 
 /* ========== Gallery ========== */
 .gallery-item {
