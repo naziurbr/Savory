@@ -418,52 +418,116 @@
 
 
 
-    <!-- Special Offer -->
-    <section class="special-offer py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="https://via.placeholder.com/500x400" alt="Special" class="img-fluid rounded-4">
-                </div>
-                <div class="col-lg-6">
-                    <span class="badge bg-primary mb-3">Limited Time Offer</span>
-                    <h2 class="mb-4">Chef's Special Tasting Menu</h2>
-                    <p class="lead mb-4">Experience our chef's creativity with a specially curated 5-course tasting menu, featuring seasonal ingredients and innovative techniques.</p>
-                    <ul class="list-unstyled mb-4">
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> 5 Exquisite Courses</li>
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Wine Pairing Available</li>
-                        <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Vegetarian Options</li>
-                    </ul>
-                    <div class="d-flex align-items-center">
-                        <h3 class="text-primary mb-0 me-3">$89</h3>
-                        <del class="text-muted me-3">$120</del>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
+   <!-- Special Offer -->
+<section class="special-offer py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 d-flex flex-column gap-3">
+        <!-- Top small image -->
+        <img src="images/offer image/starter.jpg" alt="Starter Dish" class="img-fluid rounded-4" data-aos="fade-right" data-aos-delay="100">
+        <!-- Main big image -->
+        <img src="images/offer image/main-dish.jpg" alt="Special" class="img-fluid rounded-4 shadow" data-aos="zoom-in" data-aos-delay="300">
+        <!-- Bottom small image -->
+        <img src="images/offer image/dessert.jpg" alt="Dessert" class="img-fluid rounded-4" data-aos="fade-right" data-aos-delay="500">
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="700">
+        <span class="badge bg-primary mb-3">Limited Time Offer</span>
+        <h2 class="mb-4">Chef's Special Tasting Menu</h2>
+        <p class="lead mb-4">Experience our chef's creativity with a specially curated 5-course tasting menu, featuring seasonal ingredients and innovative techniques.</p>
+        <ul class="list-unstyled mb-4">
+          <li><i class="bi bi-check-circle-fill text-primary me-2"></i> 5 Exquisite Courses</li>
+          <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Wine Pairing Available</li>
+          <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Vegetarian Options</li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <h3 class="text-primary mb-0 me-3">$89</h3>
+          <del class="text-muted me-3">$120</del>
+          <a href="#" class="btn btn-primary">Book Now</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-subtitle">Gallery</span>
-                <h2 class="section-title">Food & Ambiance</h2>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://via.placeholder.com/400x300" alt="Gallery" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <i class="bi bi-zoom-in"></i>
-                        </div>
+<section id="gallery" class="gallery-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-subtitle">Gallery</span>
+            <h2 class="section-title">Food & Ambiance</h2>
+        </div>
+        <div class="row g-3">
+            <!-- Gallery Item 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/gallery/item1.jpg" alt="Gallery" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
                     </div>
                 </div>
-                <!-- Repeat for more images -->
             </div>
+            
+            <!-- Gallery Item 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/gallery/item2.jpg" alt="Gallery" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/gallery/item3.jpg" alt="Gallery" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/gallery/item4.jpg" alt="Gallery" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="images/gallery/item5.jpg" alt="Gallery" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                    <img src="images/gallery/item6.jpg" alt="Gallery" class="img-fluid">
+                    <div class="gallery-overlay">
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Reservation Section -->
     <section id="reservation" class="reservation-section py-5">

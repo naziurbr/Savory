@@ -460,6 +460,50 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
+  /* Defining primary color variable */
+  :root {
+    --primary-color: #ff6b35;
+  }
+
+  /* Button hover animation */
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  /* Image hover zoom */
+  .special-offer img:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+  }
+
+  /* Apply primary color to text and badges */
+  .badge.bg-primary {
+    background-color: var(--primary-color);
+  }
+
+  .text-primary {
+    color: var(--primary-color) !important;
+  }
+
+  /* Optional: Make sure the text hover effect is more subtle */
+  .btn-primary:focus, .btn-primary:hover {
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+  }
+
+
+
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .feature-box {
@@ -480,16 +524,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ========== Gallery ========== */
+/* ========== Gallery Section ========== */
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img {
     transition: all 0.3s ease;
+    border-radius: 15px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
 }
 
 .gallery-overlay {
@@ -498,17 +552,19 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255,107,53,0.8);
+    background: rgba(255, 107, 53, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
 }
 
 .gallery-overlay i {
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
@@ -518,6 +574,52 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
 }
+
+.gallery-item:hover .gallery-overlay i {
+    transform: scale(1.2);
+}
+
+/* Hover and animation effects for individual items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply AOS library fade effect */
+.gallery-item {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .gallery-item img {
+        height: 200px; /* Limit image height on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-item img {
+        height: 180px;
+    }
+}
+
+/* Modal custom styles */
+.modal-dialog-centered {
+    max-width: 80%;
+}
+
+.modal-body img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 /* ========== Reservation Section ========== */
 .reservation-section {
