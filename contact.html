@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Savory Restaurant & Café</title>
+  <meta name="description" content="Get in touch with Savory Restaurant & Café. Contact details, map, contact form, and FAQs." />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Global styles (your site-wide file with variables, navbar, etc.) -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Page styles -->
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body class="inner-page">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="Savory Home">
+        <div class="brand-logo">
+          <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
+          <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <span class="brand-text">Savory</span>
+      </a>
+
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="toggler-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+        <div class="navbar-right">
+          <a href="index.html#reservation" class="btn btn-primary btn-reservation">
+            <span class="btn-text">Book a Table</span>
+            <span class="btn-icon"><i class="bi bi-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero" style="--hero-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-10 mx-auto text-center">
+          <span class="page-hero-badge"><i class="bi bi-chat-dots-fill me-2"></i>Contact</span>
+          <h1 class="page-hero-title">We’d Love To Hear From You</h1>
+          <p class="page-hero-subtitle">Questions, feedback, or planning a special event? Drop us a line.</p>
+
+          <nav class="page-hero-breadcrumb" aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="page-hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,64L48,53.3C96,43,192,21,288,21.3C384,21,480,43,576,58.7C672,75,768,85,864,90.7C960,96,1056,96,1152,80C1248,64,1344,32,1392,16L1440,0L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Quick Contact Cards -->
+  <section class="quick-contact">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="tel:+15551234567" class="qc-card">
+            <div class="qc-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <h5>Call Us</h5>
+              <p class="mb-0 text-muted">+1 (555) 123-4567</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="mailto:info@savory.com" class="qc-card">
+            <div class="qc-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <h5>Email</h5>
+              <p class="mb-0 text-muted">info@savory.com</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://maps.google.com/?q=123 Main Street, City" target="_blank" rel="noopener" class="qc-card">
+            <div class="qc-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <h5>Find Us</h5>
+              <p class="mb-0 text-muted">123 Main Street, City</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map + Details -->
+  <section class="contact-info">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="map-card">
+            <div class="map-embed">
+              <iframe
+                title="Savory location on Google Maps"
+                src="https://www.google.com/maps?q=123%20Main%20Street%2C%20City&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="details-card">
+            <h4 class="mb-3">Get In Touch</h4>
+            <p class="text-muted mb-4">Reach out for reservations, private events, or general inquiries.</p>
+
+            <div class="detail-item">
+              <div class="detail-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <h6 class="mb-1">Address</h6>
+                <p class="mb-0 text-muted">123 Main Street, City</p>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <h6 class="mb-1">Phone</h6>
+                <p class="mb-0"><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <h6 class="mb-1">Email</h6>
+                <p class="mb-0"><a href="mailto:info@savory.com">info@savory.com</a></p>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-icon"><i class="bi bi-clock-fill"></i></div>
+              <div>
+                <h6 class="mb-1">Opening Hours</h6>
+                <p class="mb-0 text-muted">
+                  Mon–Fri: 8:00 AM – 10:00 PM<br />
+                  Sat–Sun: 9:00 AM – 11:00 PM
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <a href="index.html#reservation" class="btn btn-premium"><i class="bi bi-calendar2-check me-2"></i>Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-subtitle"><i class="bi bi-send-fill me-2"></i>Send Message</span>
+        <h2 class="section-title">Contact Form</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Replace YOUR_EMAIL with your email to enable direct submissions via FormSubmit -->
+          <form id="contactForm" class="contact-form needs-validation" action="https://formsubmit.co/YOUR_EMAIL" method="POST" novalidate>
+            <!-- FormSubmit options -->
+            <input type="hidden" name="_subject" value="New message from Savory Website" />
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- Optional: replace with a thank-you page -->
+            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display:none" />
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required />
+                  <label for="name">Your Name</label>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required />
+                  <label for="email">Your Email</label>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="topic" name="topic" required>
+                    <option value="" selected disabled>Choose one</option>
+                    <option>General Inquiry</option>
+                    <option>Reservation</option>
+                    <option>Private Event</option>
+                    <option>Catering</option>
+                  </select>
+                  <label for="topic">Topic</label>
+                  <div class="invalid-feedback">Please select a topic.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" />
+                  <label for="subject">Subject (optional)</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Your Message" id="message" name="message" style="height: 160px" required></textarea>
+                  <label for="message">Your Message</label>
+                  <div class="invalid-feedback">Please enter a message.</div>
+                </div>
+              </div>
+
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-premium btn-lg px-5" id="submitBtn">
+                  <span class="btn-label">Send Message</span>
+                  <span class="btn-spinner spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+                </button>
+                <p class="form-note text-muted mt-2">We typically respond within 24 hours.</p>
+              </div>
+            </div>
+          </form>
+
+          <!-- Success alert (shown after submit) -->
+          <div id="formAlert" class="alert alert-success mt-4 d-none" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>Your message has been sent. Thank you!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-subtitle"><i class="bi bi-life-preserver me-2"></i>Help Center</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+                  Do you take reservations?
+                </button>
+              </h2>
+              <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion" aria-labelledby="q1">
+                <div class="accordion-body">
+                  Yes—reservations are recommended, especially on weekends. Book online or call us.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                  Do you offer vegetarian or gluten-free options?
+                </button>
+              </h2>
+              <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" aria-labelledby="q2">
+                <div class="accordion-body">
+                  Absolutely. We have a variety of vegetarian and gluten-free dishes. Ask your server for recommendations.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                  Can I host a private event?
+                </button>
+              </h2>
+              <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" aria-labelledby="q3">
+                <div class="accordion-body">
+                  Yes, we host private dining and events. Contact us with your date, party size, and preferences.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false" aria-controls="a4">
+                  Do you have parking?
+                </button>
+              </h2>
+              <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" aria-labelledby="q4">
+                <div class="accordion-body">
+                  Street parking and nearby garages are available. We recommend arriving a few minutes early on weekends.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h4 class="mb-3">Savory Restaurant</h4>
+          <p>Experience culinary excellence in every bite.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Opening Hours</h5>
+          <p>Monday - Friday: 8:00 AM - 10:00 PM</p>
+          <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-3">Contact Info</h5>
+          <p><i class="bi bi-geo-alt me-2"></i> 123 Main Street, City</p>
+          <p><i class="bi bi-phone me-2"></i> (555) 123-4567</p>
+          <p><i class="bi bi-envelope me-2"></i> info@savory.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Collapse mobile nav when clicking a link
+    (function () {
+      const nav = document.getElementById('navbarNav');
+      if (!nav) return;
+      nav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('show')) new bootstrap.Collapse(nav).hide();
+        });
+      });
+    })();
+
+    // Form validation and UX
+    (function () {
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('submitBtn');
+      const spinner = btn?.querySelector('.btn-spinner');
+      const alertBox = document.getElementById('formAlert');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        } else {
+          // Small UX touch even if FormSubmit handles the request
+          btn.setAttribute('disabled', 'disabled');
+          spinner?.classList.remove('d-none');
+          setTimeout(() => {
+            // If using FormSubmit redirect, this may not run.
+            // If testing locally without internet, show success:
+            if (alertBox) alertBox.classList.remove('d-none');
+            btn.removeAttribute('disabled');
+            spinner?.classList.add('d-none');
+            form.reset();
+            form.classList.remove('was-validated');
+          }, 800);
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+</body>
+</html>
