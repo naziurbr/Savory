@@ -193,9 +193,20 @@ a:focus-visible, button:focus-visible, .navbar-toggler:focus-visible, #mainNav .
 .hero-buttons .btn { padding: 0.8rem 2rem; font-size: 1rem; border-radius: 50px; font-weight: 500; transition: var(--transition); }
 .hero-buttons .btn-primary { background: var(--primary-color); border-color: var(--primary-color); }
 .hero-buttons .btn-primary:hover { background: var(--secondary-color); border-color: var(--secondary-color); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4); }
-.hero-section .btn-outline-light { border: 2px solid #fff; color: #fff; background: transparent; }
-.hero-section .btn-outline-light:hover { background: #fff; color: var(--dark-color); transform: translateY(-3px); }
+.hero-section .btn-outline-light { border: 2px solid var(--primary-color); color: #000000; background: transparent; }
+.hero-section .btn-outline-light:hover { background: var(--secondary-color); color: var(--dark-color); transform: translateY(-3px); }
 .hero-wave { position: absolute; bottom: -1px; left: 0; width: 100%; z-index: 1; }
+
+
+/* Make links readable inside the expanded mobile collapse on homepage */
+#mainNav:not(.scrolled) .navbar-collapse .nav-link,
+#mainNav:not(.scrolled) .navbar-collapse .nav-link span {
+  color: var(--dark-color) !important;
+}
+#mainNav .navbar-collapse .nav-link:hover,
+#mainNav .navbar-collapse .nav-link:focus {
+  color: var(--primary-color) !important;
+}
 
 /* ========== Features Section ========== */
 .features-section { padding: 80px 0; background: var(--light-color); }
@@ -271,6 +282,36 @@ a:focus-visible, button:focus-visible, .navbar-toggler:focus-visible, #mainNav .
   .gallery-item:hover .gallery-overlay { opacity: 1; }
   .gallery-item:hover .gallery-overlay i { transform: scale(1); }
 }
+/* Make sure the gallery media div takes full width */
+.gallery-media {
+  position: relative;
+  width: 100%; /* Ensure the div takes up full width */
+  height: auto;
+  overflow: hidden;
+}
+
+.is-square {
+  width: 100%; /* Ensure it's responsive */
+  height: auto;
+}
+
+.gallery-media img {
+  width: 100%; /* Make the image fill the parent container */
+  height: auto; /* Keep the aspect ratio intact */
+  object-fit: cover; /* This will ensure it covers the space without stretching */
+  object-position: center center; /* Center the image */
+}
+
+/* Optional: if you want the image to fit within a specific max-width */
+@media (min-width: 1024px) {
+  .gallery-media {
+    max-width: 1200px; /* Set the max width on large screens */
+    margin: 0 auto; /* Center the div on the page */
+  }
+}
+
+
+
 
 /* ========== Reservation Section ========== */
 .reservation-section {
