@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery - Savory Restaurant & Café</title>
-  <meta name="description" content="Explore Savory’s gallery: food artistry, interiors, crafted drinks, desserts, and the people behind the flavors." />
+  <meta name="description" content="Savory Gallery — food artistry, interiors, drinks, desserts, and the people behind the flavors." />
 
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +14,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
 
+  <!-- AOS (optional animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -21,25 +24,22 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Page styles -->
   <link rel="stylesheet" href="gallery.css" />
-
-  <!-- Lightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body class="inner-page">
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Primary navigation">
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="navbar-progress-bar"></div>
     <div class="container">
-      <a class="navbar-brand" href="index.html" aria-label="Savory Home">
+      <a class="navbar-brand" href="index.html">
         <div class="brand-logo">
-          <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>
-          <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
+          <i class="bi bi-cup-hot-fill"></i>
+          <div class="steam"><span></span><span></span><span></span></div>
         </div>
         <span class="brand-text">Savory</span>
       </a>
 
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="toggler-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="toggler-icon"><span></span><span></span><span></span></div>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -51,7 +51,7 @@
           <li class="nav-item"><a class="nav-link" href="contact.html"><span>Contact</span></a></li>
         </ul>
         <div class="navbar-right">
-          <a href="index.html#reservation" class="btn btn-primary btn-reservation" aria-label="Book a table">
+          <a href="index.html#reservation" class="btn btn-primary btn-reservation">
             <span class="btn-text">Book a Table</span>
             <span class="btn-icon"><i class="bi bi-arrow-right"></i></span>
           </a>
@@ -60,395 +60,246 @@
     </div>
   </nav>
 
-  <!-- Cinematic Page Hero (mobile-friendly height) -->
+  <!-- Hero -->
   <section class="page-hero" style="--hero-image: url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1600&q=80');">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-10 mx-auto text-center">
-          <span class="page-hero-badge"><i class="bi bi-camera2 me-2"></i>Food & Ambiance</span>
-          <h1 class="page-hero-title">Gallery</h1>
-          <p class="page-hero-subtitle">A cinematic look at our dishes, interiors, drinks, desserts, and the people behind them.</p>
-          <nav class="page-hero-breadcrumb" aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center">
-              <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Gallery</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
+    <div class="container text-center">
+      <span class="page-hero-badge"><i class="bi bi-camera2 me-2"></i>Food & Ambiance</span>
+      <h1 class="page-hero-title">Gallery</h1>
+      <p class="page-hero-subtitle">A cinematic look at our dishes, interiors, drinks, desserts, and the people behind them.</p>
     </div>
     <div class="page-hero-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" d="M0,64L48,53.3C96,43,192,21,288,21.3C384,21,480,43,576,58.7C672,75,768,85,864,90.7C960,96,1056,96,1152,80C1248,64,1344,32,1392,16L1440,0L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path></svg>
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,64L48,53.3C96,43,192,21,288,21.3C384,21,480,43,576,58.7C672,75,768,85,864,90.7C960,96,1056,96,1152,80C1248,64,1344,32,1392,16L1440,0L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+      </svg>
     </div>
   </section>
 
-  <!-- Sticky, scrollable filters -->
-  <section class="gallery-filters sticky-filter" role="region" aria-label="Gallery filters">
-    <div class="container">
-      <div class="filter-scroll" role="tablist" aria-label="Filter categories">
-        <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true"><i class="bi bi-grid-3x3-gap-fill me-1"></i>All</button>
-        <button class="filter-chip" data-filter="food" role="tab" aria-selected="false"><i class="bi bi-egg-fried me-1"></i>Food</button>
-        <button class="filter-chip" data-filter="interior" role="tab" aria-selected="false"><i class="bi bi-bank me-1"></i>Interior</button>
-        <button class="filter-chip" data-filter="drinks" role="tab" aria-selected="false"><i class="bi bi-cup-straw me-1"></i>Drinks</button>
-        <button class="filter-chip" data-filter="desserts" role="tab" aria-selected="false"><i class="bi bi-cupcake me-1"></i>Desserts</button>
-        <button class="filter-chip" data-filter="people" role="tab" aria-selected="false"><i class="bi bi-people me-1"></i>People</button>
-      </div>
+  <!-- Category Tabs -->
+  <section class="gallery-tabs">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <ul class="nav nav-pills flex-nowrap overflow-auto" id="galleryTabs" role="tablist" aria-label="Gallery categories">
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link active" data-filter="all" role="tab" aria-selected="true">
+            <i class="bi bi-grid-3x3-gap-fill me-2"></i>All
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" data-filter="food" role="tab" aria-selected="false">
+            <i class="bi bi-egg-fried me-2"></i>Food
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" data-filter="drinks" role="tab" aria-selected="false">
+            <i class="bi bi-cup-straw me-2"></i>Drinks
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" data-filter="interior" role="tab" aria-selected="false">
+            <i class="bi bi-bank me-2"></i>Interior
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" data-filter="desserts" role="tab" aria-selected="false">
+            <i class="bi bi-cupcake me-2"></i>Desserts
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button type="button" class="nav-link" data-filter="people" role="tab" aria-selected="false">
+            <i class="bi bi-people me-2"></i>People
+          </button>
+        </li>
+      </ul>
       <div class="filter-meta">
-        <span class="filter-count" aria-live="polite"><strong id="resultsCount">0</strong> items</span>
+        <span class="filter-count">Showing <strong id="resultsCount">0</strong> items</span>
       </div>
     </div>
   </section>
 
   <!-- Gallery Grid -->
-  <section class="gallery-section pb-5">
+  <section class="gallery-section py-5">
     <div class="container">
-      <div class="gallery-grid">
+      <div class="row g-3" id="galleryGrid">
         <!-- Interior: Dining room -->
-        <article class="gallery-card" data-category="interior" title="Dining room">
-          <a href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Dining room; description: Warm light, elegant table settings.">
-            <div class="gallery-media is-landscape">
-              <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Restaurant dining room with warm lighting and cozy seating"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="interior">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="40">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1080&q=80" alt="Dining room with warm lighting and elegant table settings" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-bank me-1"></i>Interior</span>
-                <h5>Dining room</h5>
-                <p>Warm light, elegant table settings</p>
+                <h5 class="caption-title">Dining room</h5>
+                <p class="caption-text">Warm light • Elegant tables</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Food: Seared salmon -->
-        <article class="gallery-card" data-category="food dinner" title="Seared salmon">
-          <a href="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Seared salmon; description: Lemon butter and grilled asparagus.">
-            <div class="gallery-media is-landscape">
-              <img
-                src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Seared salmon with lemon butter and grilled asparagus"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="food dinner">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="80">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1080&q=80" alt="Seared salmon with lemon butter and asparagus" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-egg-fried me-1"></i>Food</span>
-                <h5>Seared salmon</h5>
-                <p>Lemon butter • Grilled asparagus</p>
+                <h5 class="caption-title">Seared salmon</h5>
+                <p class="caption-text">Lemon butter • Asparagus</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Food: Truffle pasta -->
-        <article class="gallery-card" data-category="food dinner" title="Truffle pasta">
-          <a href="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Truffle pasta; description: Tagliatelle in creamy truffle sauce.">
-            <div class="gallery-media is-landscape">
-              <img
-                src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Tagliatelle pasta with creamy truffle sauce and parmesan"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="food dinner">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="120">
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1080&q=80" alt="Truffle pasta with creamy sauce and parmesan" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-egg-fried me-1"></i>Food</span>
-                <h5>Truffle pasta</h5>
-                <p>Tagliatelle • Creamy truffle</p>
+                <h5 class="caption-title">Truffle pasta</h5>
+                <p class="caption-text">Tagliatelle • Creamy truffle</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
-        <!-- Desserts: Cheesecake -->
-        <article class="gallery-card" data-category="desserts food" title="Cheesecake">
-          <a href="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Cheesecake; description: NY style with strawberry drizzle.">
-            <div class="gallery-media is-square">
-              <img
-                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="New York cheesecake slice with strawberries"
-                loading="lazy" decoding="async" />
-            </div>
+        <!-- Dessert: Cheesecake -->
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="desserts food">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="160">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1080&q=80" alt="New York cheesecake slice with strawberries" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
-                <span class="gallery-chip"><i class="bi bi-cupcake me-1"></i>Dessert</span>
-                <h5>Cheesecake</h5>
-                <p>NY style • Strawberry drizzle</p>
+                <span class="gallery-chip"><i class="bi bi-cupcake me-1"></i>Desserts</span>
+                <h5 class="caption-title">Cheesecake</h5>
+                <p class="caption-text">NY style • Strawberry drizzle</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Drinks: Elderflower Gin Fizz -->
-        <article class="gallery-card" data-category="drinks" title="Elderflower Gin Fizz">
-          <a href="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Elderflower Gin Fizz; description: Bright and floral.">
-            <div class="gallery-media is-portrait">
-              <img
-                src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=700&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Elderflower gin fizz cocktail with ice and garnish"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="drinks">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=900&q=80" alt="Elderflower gin fizz cocktail with ice and garnish" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-cup-straw me-1"></i>Drinks</span>
-                <h5>Elderflower Gin Fizz</h5>
-                <p>Bright • Floral • Refreshing</p>
+                <h5 class="caption-title">Elderflower Gin Fizz</h5>
+                <p class="caption-text">Bright • Floral • Refreshing</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- People: Chef plating -->
-        <article class="gallery-card" data-category="people" title="Chef plating">
-          <a href="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Chef plating; description: Precision and passion.">
-            <div class="gallery-media is-landscape">
-              <img
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Chef carefully plating a dish in the kitchen"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="people">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="240">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1080&q=80" alt="Chef carefully plating a dish in the kitchen" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-people me-1"></i>People</span>
-                <h5>Chef plating</h5>
-                <p>Precision • Passion • Artistry</p>
+                <h5 class="caption-title">Chef plating</h5>
+                <p class="caption-text">Precision • Passion • Artistry</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Food: Steak salad -->
-        <article class="gallery-card" data-category="food dinner" title="Steak salad">
-          <a href="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Steak salad; description: Seared sirloin with greens.">
-            <div class="gallery-media is-portrait">
-              <img
-                src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Steak salad with greens and dressing"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="food dinner">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="280">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80" alt="Steak salad with greens and dressing" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-egg-fried me-1"></i>Food</span>
-                <h5>Steak salad</h5>
-                <p>Seared sirloin • Mixed greens</p>
+                <h5 class="caption-title">Steak salad</h5>
+                <p class="caption-text">Seared sirloin • Mixed greens</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Interior: Table setting -->
-        <article class="gallery-card" data-category="interior" title="Table setting">
-          <a href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Table setting; description: Fine dining ambience.">
-            <div class="gallery-media is-square">
-              <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Elegant table setting with candles and glassware"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="interior">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="320">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1080&q=80" alt="Elegant table setting with candles and glassware" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-bank me-1"></i>Interior</span>
-                <h5>Table setting</h5>
-                <p>Fine dining ambience</p>
+                <h5 class="caption-title">Table setting</h5>
+                <p class="caption-text">Fine dining ambience</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
-        <!-- Drinks: Old Fashioned -->
-        <article class="gallery-card" data-category="drinks" title="Smoked Old Fashioned">
-          <a href="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Smoked Old Fashioned; description: Classic with a smoky finish.">
-            <div class="gallery-media is-square">
-              <img
-                src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Smoked old fashioned cocktail with orange peel"
-                loading="lazy" decoding="async" />
-            </div>
+        <!-- Drinks: Smoked Old Fashioned -->
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="drinks">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="360">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80" alt="Smoked old fashioned cocktail with orange peel" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-cup-straw me-1"></i>Drinks</span>
-                <h5>Smoked Old Fashioned</h5>
-                <p>Classic • Smoky • Balanced</p>
+                <h5 class="caption-title">Smoked Old Fashioned</h5>
+                <p class="caption-text">Classic • Smoky • Balanced</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Desserts: Chocolate indulgence -->
-        <article class="gallery-card" data-category="desserts food" title="Chocolate indulgence">
-          <a href="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Chocolate indulgence; description: Rich and silky.">
-            <div class="gallery-media is-portrait">
-              <img
-                src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=700&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="Rich chocolate dessert plated with garnish"
-                loading="lazy" decoding="async" />
-            </div>
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="desserts food">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=900&q=80" alt="Rich chocolate dessert plated with garnish" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
-                <span class="gallery-chip"><i class="bi bi-cupcake me-1"></i>Dessert</span>
-                <h5>Chocolate indulgence</h5>
-                <p>Rich • Silky • Decadent</p>
+                <span class="gallery-chip"><i class="bi bi-cupcake me-1"></i>Desserts</span>
+                <h5 class="caption-title">Chocolate indulgence</h5>
+                <p class="caption-text">Rich • Silky • Decadent</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
-        <!-- Drinks: Wine -->
-        <article class="gallery-card" data-category="drinks" title="Chardonnay">
-          <a href="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Chardonnay; description: Oak-aged, vanilla notes.">
-            <div class="gallery-media is-portrait">
-              <img
-                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=700&q=80"
-                srcset="
-                  https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=480&q=70 480w,
-                  https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=768&q=70 768w,
-                  https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1080&q=70 1080w"
-                sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-                alt="White wine glasses in a warm setting"
-                loading="lazy" decoding="async" />
-            </div>
+        <!-- Drinks: Chardonnay -->
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="drinks">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="440">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=80" alt="White wine glasses in a warm setting" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-cup-straw me-1"></i>Drinks</span>
-                <h5>Chardonnay</h5>
-                <p>Oak-aged • Vanilla • Tropical</p>
+                <h5 class="caption-title">Chardonnay</h5>
+                <p class="caption-text">Oak-aged • Vanilla • Tropical</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
+          </div>
+        </div>
 
         <!-- Interior: Bar area -->
-        <article class="gallery-card" data-category="interior" title="Bar area">
-          <a href="https://images.unsplash.com/photo-1670710029008-30c38b1f9de5?auto=format&fit=crop&w=1600&q=90"
-             class="glightbox"
-             data-gallery="savory"
-             data-glightbox="title: Bar area; description: Cozy corner for evening drinks.">
-            <div class="gallery-media is-square">
-  <img
-    src="https://images.unsplash.com/photo-1680991234567-abcdefg?auto=format&fit=crop&w=800&q=80"
-    srcset="
-      https://images.unsplash.com/photo-1680991234567-abcdefg?auto=format&fit=crop&w=480&q=70 480w,
-      https://images.unsplash.com/photo-1680991234567-abcdefg?auto=format&fit=crop&w=768&q=70 768w,
-      https://images.unsplash.com/photo-1680991234567-abcdefg?auto=format&fit=crop&w=1080&q=70 1080w"
-    sizes="(max-width: 575px) 96vw, (max-width: 767px) 48vw, (max-width: 1199px) 33vw, 25vw"
-    alt="New Image Description"
-    loading="lazy" decoding="async" />
-</div>
-
+        <div class="col-lg-4 col-md-6 gallery-col" data-category="interior">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="480">
+            <img src="https://images.unsplash.com/photo-1670710029008-30c38b1f9de5?auto=format&fit=crop&w=1080&q=80" alt="Bar area with backlit shelves and cozy seating" />
             <div class="gallery-overlay">
               <div class="gallery-caption">
                 <span class="gallery-chip"><i class="bi bi-bank me-1"></i>Interior</span>
-                <h5>Bar area</h5>
-                <p>Cozy corner • Evening vibes</p>
+                <h5 class="caption-title">Bar area</h5>
+                <p class="caption-text">Cozy corner • Evening vibes</p>
               </div>
               <i class="bi bi-zoom-in"></i>
             </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
+          </div>
+        </div>
 
-  <!-- CTA -->
-  <section class="about-cta">
-    <div class="container text-center">
-      <h3 class="mb-2">Like what you see?</h3>
-      <p class="text-muted mb-4">Book a table and enjoy the full Savory experience.</p>
-      <a class="btn btn-premium" href="index.html#reservation">Reserve Now</a>
+      </div>
     </div>
   </section>
 
@@ -460,9 +311,9 @@
           <h4 class="mb-3">Savory Restaurant</h4>
           <p>Experience culinary excellence in every bite.</p>
           <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
           </div>
         </div>
         <div class="col-lg-4">
@@ -482,68 +333,43 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // 100vh fix + sticky offset
-    function setVh() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', vh + 'px');
-      const nav = document.getElementById('mainNav');
-      if (nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
-    }
-    setVh(); window.addEventListener('resize', setVh); window.addEventListener('orientationchange', setVh);
+    // AOS init (optional)
+    AOS.init({ duration: 800, once: true, disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches });
 
-    // Collapse on link click (mobile)
-    const navbarCollapseEl = document.getElementById('navbarNav');
-    const bsCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
-    document.querySelectorAll('#mainNav .nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navbarCollapseEl.classList.contains('show')) bsCollapse.hide();
+    // Category filter (robust, no gaps)
+    (function(){
+      const tabs = document.querySelectorAll('#galleryTabs .nav-link');
+      const cols = document.querySelectorAll('#galleryGrid .gallery-col');
+      const countEl = document.getElementById('resultsCount');
+
+      function applyFilter(key) {
+        let shown = 0;
+        cols.forEach(col => {
+          const cats = (col.dataset.category || '').toLowerCase().split(/\s+/);
+          const show = key === 'all' || cats.includes(key);
+          col.classList.toggle('d-none', !show); // hide completely, no layout gaps
+          if (show) shown++;
+        });
+        if (countEl) countEl.textContent = shown;
+      }
+
+      tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelector('#galleryTabs .nav-link.active')?.classList.remove('active');
+          tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          applyFilter(btn.dataset.filter);
+        });
       });
-    });
 
-    // Progress bar + navbar scrolled state
-    function updateProgress() {
-      const bar = document.querySelector('.navbar-progress-bar');
-      const scrolled = window.pageYOffset || 0;
-      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      if (bar) bar.style.width = (scrolled / max) * 100 + '%';
-      const navbar = document.getElementById('mainNav');
-      if (scrolled > 100) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-    }
-    window.addEventListener('load', updateProgress);
-    window.addEventListener('scroll', updateProgress);
-
-    // Filters
-    const chips = document.querySelectorAll('.filter-chip');
-    const cards = document.querySelectorAll('.gallery-card');
-    const counterEl = document.getElementById('resultsCount');
-
-    function applyFilter(key) {
-      let shown = 0;
-      cards.forEach(card => {
-        const cats = (card.dataset.category || '').toLowerCase().split(/\s+/);
-        const match = key === 'all' || cats.includes(key);
-        card.classList.toggle('is-hidden', !match);
-        if (match) shown++;
-      });
-      if (counterEl) counterEl.textContent = shown;
-    }
-
-    chips.forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelector('.filter-chip.active')?.classList.remove('active');
-        chips.forEach(c => c.setAttribute('aria-selected', 'false'));
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        applyFilter(btn.dataset.filter);
-      });
-    });
-
-    applyFilter(document.querySelector('.filter-chip.active')?.dataset.filter || 'all');
-
-    // Lightbox
-    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+      // Init
+      applyFilter('all');
+    })();
   </script>
+  <!-- If you include main.js, leave it after this -->
+  <!-- <script src="main.js"></script> -->
 </body>
 </html>
